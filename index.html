@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(45deg, #520000, #01016b);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-behavior: smooth;
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 3px;
+        }
+        #frame {
+            overflow: hidden;
+            border: 5px solid seashell;
+            border-radius: 20px;
+        }
+        #container {
+            position: relative;
+            /* margin: 10px 0px; */
+            height: 500px;
+            width: 750px;
+            display: flex;
+        }
+        .box {
+            height: 500px;
+            width: 750px;
+            
+        }
+        .box img {
+            height: 500px;
+            width: 750px;
+            
+        }
+        .dots {
+            margin: 10px;
+            display: flex;
+            font-size: larger;
+            color: whitesmoke;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .dot {
+            margin: 5px;
+            border: 2px solid white;
+            /* padding: 10px 20px; */
+            height: 30px;
+            width: 30px;
+            border-radius: 30px;
+        }
+        .btn {
+            font-size: 40px;
+            margin: 10px;
+            border-radius: 10px;
+            height: 100px;
+            width: 40px;
+            background: rgba(245, 245, 245, 0.3);
+            color: whitesmoke;
+            border: none;
+        }
+        .btn:hover{
+            background: rgba(245, 245, 245, 0.70);
+            color: rgb(0, 0, 0);
+        }
+        .box h2{
+            position: absolute;
+            color: whitesmoke;
+            font-size: 70px;
+            bottom: 0%;
+            padding: 10px 25px;
+            margin: 25px 0px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        @media  only screen and (max-width: 500px ) {
+            #container, .bot, .box img{
+                height: 154px;
+                width: 231px;
+            }
+            .box h2{
+                font-size: 20px;
+            }
+            .dot{
+                height: 10px;
+                width: 10px;
+                border-radius: 10px;
+                padding: 0%;
+            }
+        }
+        #xyz{
+            font-size: 50px;
+            margin: 10px;
+            color: rgba(240, 255, 255, 0.5);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="xyz">Animes I Watched</h2>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button class="btn" id="left" onclick="slideleft()">«</button>
+        <div id="frame">
+            <div id="container">
+                <div class="box" id="slide1">
+                    <img src="./images/demonslayer.jpg">
+                    <div class="title">
+                        <h2>Demon Slayer</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide2">
+                    <img src="./images/jujutsu.jpg">
+                    <div class="title">
+                        <h2>Jujutsu Kaisen</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide3">
+                    <img src="./images/AOT.png">
+                    <div class="title">
+                        <h2>Attack on Titan</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide4">
+                    <img src="./images/opm.jpg">
+                    <div class="title">
+                        <h2>One Punch Man</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide5">
+                    <img src="./images/ror.jpg">
+                    <div class="title">
+                        <h2>Record of Ragnarok</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide6">
+                    <img src="./images/deathnote.jpg">
+                    <div class="title">
+                        <h2>Deathnote</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide7">
+                    <img src="./images/goh.jpg">
+                    <div class="title">
+                        <h2>God of Highschool</h2>
+                    </div>
+                </div>
+                <div class="box" id="slide8">
+                    <img src="./images/That-Time-I-Got-Reincarnated-as-a-Slime-Novel-series-pics.jpg">
+                    <div class="title">
+                        <h2>Reincarnate as Slime</h2>
+                    </div>
+                </div>
+
+                
+               
+            </div>
+        </div>
+        <button class="btn" id="right" onclick="slideright()">»</button>
+    </div>
+    <div class="dots">
+        <button class="dot" id="dot1" onclick="slide1()"></button>
+        <button class="dot" id="dot2" onclick="slide2()"></button>
+        <button class="dot" id="dot3" onclick="slide3()"></button>
+        <button class="dot" id="dot4" onclick="slide4()"></button>
+        <button class="dot" id="dot5" onclick="slide5()"></button>
+        <button class="dot" id="dot6" onclick="slide6()"></button>
+        <button class="dot" id="dot7" onclick="slide7()"></button>
+        <button class="dot" id="dot8" onclick="slide8()"></button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
